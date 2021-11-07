@@ -24,7 +24,7 @@ class PostController extends Controller
     }
 
     public function store(StoreUpdatePost $request) {
-
+        
         $data = $request->all();
         if ($request->image->isValid()) {
             $nameFile = Str::of($request->title)->slug('-') . '.' .$request->image->getClientOriginalExtension();

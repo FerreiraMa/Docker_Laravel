@@ -7,6 +7,7 @@
 @endif
 
 @csrf
+
 <input type="text" name="title" id="title" placeholder="Título" value="{{$post->title ?? old('title')}}" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"><br/><br/>
 <input type="file" name="image" id="image" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"><br/><br/>
 <textarea name="content" id="content" cols="30" rows="5" placeholder="Conteúdo" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">{{$post->content ?? old('content')}}</textarea><br/><br/>

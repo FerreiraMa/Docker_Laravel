@@ -23,14 +23,16 @@ class StoreUpdatePost extends FormRequest
      */
     public function rules()
     {
-        $id = $this->segment(2);
+        $id = $s = preg_replace('/[^0-9]/', '', $this->segment('1'));
+        // dd($id);
         $rules = [
+
             'title' => [
                 'required',
                 'min:3',
                 'max:160',
-                // 'unique:posts, title,{id},id',
-                Rule::unique('posts')->ignore($id),
+                //'unique:posts, title,{id},id',
+                Rule::unique('posts')->ignore($id)
             ],
             'content' => ['nullable', 'min:5', 'max:1000'],
             'image' => ['required', 'image']
